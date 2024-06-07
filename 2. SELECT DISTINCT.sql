@@ -1,4 +1,8 @@
 1) SQL SELECT DISTINCT Statement :      
+2) Count Distinct :
+______________________________________________________________________________________________________
+
+1) SQL SELECT DISTINCT Statement :      
     The SELECT DISTINCT statement is used to return only distinct (different) values.
 
  * Inside a table, a column often contains many duplicate values;
