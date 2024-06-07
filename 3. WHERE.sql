@@ -1,4 +1,8 @@
 1) SQL WHERE Clause :
+2) Text Fields vs. Numeric Fields
+3) Operators in The WHERE Clause :
+_______________________________________________________________________________________________________-
+1) SQL WHERE Clause :
   The WHERE clause is used to filter records.
 
   It is used to extract only those records that fulfill a specified condition.
@@ -14,6 +18,8 @@
         SELECT * FROM Customers
         WHERE Country='Mexico';
   -------------------------------------------
+_______________________________________________________________________________________________________-
+
 2) Text Fields vs. Numeric Fields
     SQL requires single quotes around text values (most database systems will also allow double quotes).
     
@@ -25,7 +31,7 @@
         WHERE CustomerID=1;
   -------------------------------
 _______________________________________________________________________________________________________-
-
+  
   3) Operators in The WHERE Clause :
   
   The following operators can be used in the WHERE clause:
