@@ -1,8 +1,8 @@
 1) SQL Aggregate Functions
 2) MIN() and MAX() Functions
 3) Set Column Name(Alias)
-4) Use MIN() with GROUP BY :
- 
+4) Use MIN() with GROUP BY
+5) COUNT() Function
 __________________________________________________________________________________________
 
 1) SQL Aggregate Functions
@@ -75,3 +75,58 @@ ________________________________________________________________________________
         FROM Products
         GROUP BY CategoryID;
       --------------------------------------------------
+__________________________________________________________________________________________________________________
+5) COUNT() Function :
+       The COUNT() function returns the number of rows that matches a specified criterion.
+
+      Syntax :
+          ---------------------------
+           SELECT COUNT(column_name)
+           FROM table_name
+           WHERE condition;
+          ---------------------------
+      Ex:
+          Find the total number of rows in the Products table:
+          ------------------  
+            SELECT COUNT(*)
+            FROM Products;
+          ------------------
+      Ex:
+         Find the number of products where the ProductName is not null:
+            ----------------------------- 
+             SELECT COUNT(ProductName)
+             FROM Products;
+            ----------------------------- 
+      Ex:
+         Find the number of products where Price is higher than 20:
+             ------------------------- 
+              SELECT COUNT(ProductID)
+              FROM Products
+              WHERE Price > 20;
+             --------------------------
+       Ex:  
+          How many different prices are there in the Products table:
+             ----------------------------- 
+              SELECT COUNT(DISTINCT Price)
+              FROM Products;
+             ----------------------------- 
+
+Use an Alias
+Give the counted column a name by using the AS keyword.
+
+       Ex:
+          Name the column "Number of records":
+             ---------------------------------------- 
+              SELECT COUNT(*) AS [Number of records]
+              FROM Products;
+             ----------------------------------------
+Use COUNT() with GROUP BY
+Here we use the COUNT() function and the GROUP BY clause, to return the number of records for each category in the Products table:
+              
+        Ex :
+             ----------------------------------------------------
+              SELECT COUNT(*) AS [Number of records], CategoryID
+              FROM Products
+              GROUP BY CategoryID;
+             ----------------------------------------------------
+__________________________________________________________________________________________
