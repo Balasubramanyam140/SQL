@@ -3,6 +3,8 @@
 3) Set Column Name(Alias)
 4) Use MIN() with GROUP BY
 5) COUNT() Function
+6) SUM() Function
+7) AVG() Function
 __________________________________________________________________________________________
 
 1) SQL Aggregate Functions
@@ -130,3 +132,71 @@ Here we use the COUNT() function and the GROUP BY clause, to return the number o
               GROUP BY CategoryID;
              ----------------------------------------------------
 __________________________________________________________________________________________
+6) SUM() Function :
+         The SUM() function returns the total sum of a numeric column.
+         Syntax :
+              -------------------------
+               SELECT SUM(column_name)
+               FROM table_name
+               WHERE condition;
+              --------------------------
+         Ex :
+            Return the sum of all Quantity fields in the OrderDetails table:
+             -----------------------  
+               SELECT SUM(Quantity)
+               FROM OrderDetails;
+             -----------------------
+    --> Use an Alias
+            Give the summarized column a name by using the AS keyword.
+            
+            Ex :
+               Name the column "total":
+                 ------------------------------- 
+                  SELECT SUM(Quantity) AS total
+                  FROM OrderDetails;
+                 -------------------------------
+   --> Use SUM() with GROUP BY
+         Here we use the SUM() function and the GROUP BY clause, 
+            to return the Quantity for each OrderID in the OrderDetails table:
+            
+            Ex :
+               ----------------------------------------------------
+                  SELECT OrderID, SUM(Quantity) AS [Total Quantity]
+                  FROM OrderDetails
+                  GROUP BY OrderID;
+               ----------------------------------------------------
+__________________________________________________________________________________________________________________
+7) AVG() Function :
+      The AVG() function returns the average value of a numeric column.
+      Syntax :
+         --------------------------
+            SELECT AVG(column_name)
+            FROM table_name
+            WHERE condition;
+         --------------------------
+      Ex: 
+         Find the average price of all products:
+           ------------------ 
+            SELECT AVG(Price)
+            FROM Products;
+           -------------------
+   --> Use an Alias
+            Give the AVG column a name by using the AS keyword.
+
+      Ex :
+         Name the column "average price":
+              -------------------------------------- 
+               SELECT AVG(Price) AS [average price]
+               FROM Products;
+              --------------------------------------
+  --> Use AVG() with GROUP BY
+         Here we use the AVG() function and the GROUP BY clause, to return the average price for each category in the Products table:
+      
+      Example :
+         -------------------------------------------------
+            SELECT AVG(Price) AS AveragePrice, CategoryID
+            FROM Products
+            GROUP BY CategoryID;
+         -------------------------------------------------
+__________________________________________________________________________________________________________________
+
